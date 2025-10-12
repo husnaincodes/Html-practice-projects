@@ -24,7 +24,7 @@ This repository contains my **beginner-level front-end practice projects**, incl
 - Structuring webpages using semantic HTML tags  
 - Styling with internal and external CSS  
 - Adding responsive layout basics  
-- Improving design through practice  
+
 
 ---
 
