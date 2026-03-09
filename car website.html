@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Car Showcase - Dark Mode</title>
+    <link rel="stylesheet" href="car-style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🚗 AutoLux</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#showcase">Showcase</a>
+                <a href="#engine">Engine</a>
+                <a href="#colors">Colors</a>
+                <a href="#specs">Specifications</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with 360 Car View -->
+    <section id="showcase" class="hero">
+        <div class="container">
+            <h2>360° Car Viewer</h2>
+            <p class="subtitle">Rotate to explore the vehicle from every angle</p>
+            
+            <div class="car-viewer">
+                <div class="car-display">
+                    <img id="carImage" src="https://via.placeholder.com/600x400/1a1a1a/00d4ff?text=360+Car+View" alt="Car 360 View">
+                </div>
+                
+                <div class="rotation-controls">
+                    <button id="rotateLeft" class="control-btn">← Rotate Left</button>
+                    <span id="rotationAngle" class="angle-display">0°</span>
+                    <button id="rotateRight" class="control-btn">Rotate Right →</button>
+                </div>
+
+                <div class="angle-slider">
+                    <input type="range" id="angleSlider" min="0" max="360" value="0" class="slider">
+                    <p class="slider-label">Drag or use buttons to rotate</p>
+                </div>
+
+                <div class="car-info-box">
+                    <h3>2024 Luxury Sports Car</h3>
+                    <p>Premium performance vehicle with cutting-edge technology</p>
+                    <div class="quick-stats">
+                        <div class="stat">
+                            <span class="stat-label">0-100 km/h</span>
+                            <span class="stat-value">3.5s</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">320 km/h</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Power</span>
+                            <span class="stat-value">750 HP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engine Section -->
+    <section id="engine" class="engine-section">
+        <div class="container">
+            <h2>Engine & Performance</h2>
+            <div class="engine-grid">
+                <div class="engine-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>V12 Twin-Turbo Engine</h3>
+                    <ul class="specs-list">
+                        <li><strong>Displacement:</strong> 6.0L</li>
+                        <li><strong>Horsepower:</strong> 750 HP</li>
+                        <li><strong>Torque:</strong> 850 Nm</li>
+                        <li><strong>Fuel Type:</strong> Premium Unleaded</li>
+                        <li><strong>Transmission:</strong> 9-Speed Automatic</li>
+                    </ul>
+                </div>
+
+                <div class="engine-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Performance Features</h3>
+                    <ul class="specs-list">
+                        <li><strong>0-100 km/h:</strong> 3.5 seconds</li>
+                        <li><strong>Top Speed:</strong> 320 km/h</li>
+                        <li><strong>Fuel Economy:</strong> 8.5 L/100km</li>
+                        <li><strong>Acceleration Mode:</strong> Dynamic Sport</li>
+                        <li><strong>Cooling System:</strong> Advanced Multi-Stage</li>
+                    </ul>
+                </div>
+
+                <div class="engine-card">
+                    <div class="card-icon">🔧</div>
+                    <h3>Advanced Technology</h3>
+                    <ul class="specs-list">
+                        <li><strong>Fuel Injection:</strong> Direct Injection</li>
+                        <li><strong>Turbochargers:</strong> Dual with Variable Boost</li>
+                        <li><strong>Emissions:</strong> Euro 6 Compliant</li>
+                        <li><strong>Start-Stop System:</strong> Active Hybrid</li>
+                        <li><strong>Engine Management:</strong> AI Optimized</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section id="colors" class="colors-section">
+        <div class="container">
+            <h2>Available Colors</h2>
+            <p class="subtitle">Choose your perfect shade</p>
+            
+            <div class="colors-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #1a1a1a; border: 3px solid #00d4ff;"></div>
+                    <h3>Midnight Black</h3>
+                    <p>Elegant and timeless black with metallic finish</p>
+                    <span class="color-code">#1a1a1a</span>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #c0302c;"></div>
+                    <h3>Racing Red</h3>
+                    <p>Bold and aggressive performance red</p>
+                    <span class="color-code">#c0302c</span>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #f4f1de;"></div>
+                    <h3>Pearl White</h3>
+                    <p>Pure white with iridescent pearl coating</p>
+                    <span class="color-code">#f4f1de</span>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #1e3a8a;"></div>
+                    <h3>Ocean Blue</h3>
+                    <p>Deep blue with metallic shimmer</p>
+                    <span class="color-code">#1e3a8a</span>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #d4a574;"></div>
+                    <h3>Champagne Gold</h3>
+                    <p>Luxurious golden tone for sophistication</p>
+                    <span class="color-code">#d4a574</span>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #2d3436;"></div>
+                    <h3>Carbon Grey</h3>
+                    <p>Modern grey with carbon fiber texture</p>
+                    <span class="color-code">#2d3436</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section id="specs" class="specs-section">
+        <div class="container">
+            <h2>Complete Specifications</h2>
+            
+            <div class="specs-table-wrapper">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Specification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dimensions</strong></td>
+                            <td>Length: 4850mm | Width: 2010mm | Height: 1270mm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weight</strong></td>
+                            <td>Curb Weight: 1450 kg | Maximum Payload: 450 kg</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wheelbase</strong></td>
+                            <td>2890 mm | Track: 1610mm (Front) / 1620mm (Rear)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tires</strong></td>
+                            <td>Michelin Pilot Sport 4S | Size: 285/35R20</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brakes</strong></td>
+                            <td>Carbon-Ceramic Composite | 6-Piston Front / 4-Piston Rear</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Suspension</strong></td>
+                            <td>Adaptive Multi-Link with Air Springs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Steering</strong></td>
+                            <td>Electric Power Steering with Adaptive Response</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seating</strong></td>
+                            <td>2 + 2 Premium Leather | Heated & Massage Functions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interior Materials</strong></td>
+                            <td>Premium Leather | Alcantara | Carbon Fiber Accents</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infotainment</strong></td>
+                            <td>12.3" Digital Touchscreen | Voice Control | Navigation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Safety Features</strong></td>
+                            <td>9 Airbags | Stability Control | ABS | Electronic Brake Distribution</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Warranty</strong></td>
+                            <td>5 Years / Unlimited km | Full Service Coverage Included</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AutoLux. All rights reserved. | Premium Automotive Excellence</p>
+            <div class="footer-links">
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="car-script.js"></script>
+</body>
+</html>
