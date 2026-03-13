@@ -2,16 +2,28 @@
     display: flex;
     flex-direction: column;
     border: black 1px solid;
-    width: 800px;
+    width: 1000px;
     height: 500px;
     margin: auto;
    justify-content: center;
     padding: 20px;
     text-align: center;
+    background-color: burlywood;
 }
 h1 {
     font-size: 100px;
     color: transparent;
     background-clip: text;
-    background-image: url(""); 
+    background-image: url("Forest.jpeg"); 
 }
+.item {
+    font-size: 20px;
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
