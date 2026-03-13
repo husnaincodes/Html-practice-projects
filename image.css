@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border: black 1px solid;
+    width: 800px;
+    height: 500px;
+    margin: auto;
+   justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    font-size: 100px;
+    color: transparent;
+    background-clip: text;
+    background-image: url(""); 
+}
