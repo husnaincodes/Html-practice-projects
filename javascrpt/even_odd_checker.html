@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table Generator</title>
+</head>
+<body>
+<h3>Even Odd Checker</h3>
+
+<input type="number" id="num">
+<button onclick="checkNumber()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function checkNumber(){
+    let number = document.getElementById("num").value;
+
+    if(number % 2 == 0){
+        output = "Even Number";
+    } else {
+        output = "Odd Number";
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
