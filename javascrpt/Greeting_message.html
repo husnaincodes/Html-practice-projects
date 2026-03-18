@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table Generator</title>
+</head>
+<body>
+
+<h3>Greeting Program</h3>
+
+<input type="text" id="username" placeholder="Enter your name">
+<button onclick="greet()">Greet</button>
+
+<p id="msg"></p>
+
+<script>
+function greet(){
+    let name = document.getElementById("username").value;
+
+    if(name == ""){
+        message = "Please enter your name";
+    } else {
+        message = "Hello " + name + "!";
+    }
+
+    document.getElementById("msg").innerHTML = message;
+}
+</script>
+</body>
+</html>
