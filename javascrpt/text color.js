@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById('btn');
+    
     var title = document.getElementById('title');
 
     if (!btn || !title) {
