@@ -18,7 +18,6 @@
                 message + "<br>Age Score: " + stars;
 
             }
-
             document.querySelector("button").addEventListener("mouseover",function(){
                 this.style.backgroundColor="lightgreen";
             });
