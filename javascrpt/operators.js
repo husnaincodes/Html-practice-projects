@@ -39,6 +39,7 @@ console.log("Division Assignment:", c);
 c %= 3; // c = c % 3
 console.log("Modulus Assignment:", c);
 
+
 // Increment and Decrement Operators
 let d = 7;
 console.log("Post-increment:", d++); // Outputs 7, then d becomes 8
