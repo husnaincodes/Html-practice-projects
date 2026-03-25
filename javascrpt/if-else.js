@@ -8,8 +8,6 @@ if (color === "red") {
 }
 
 
-
-
 let color2;
 let mode = "dark";
 
