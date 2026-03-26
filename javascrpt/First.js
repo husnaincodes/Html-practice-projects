@@ -1,5 +1,3 @@
-console.log("Hello, World!");
-
 let age = 25;
 let Fullname = "Husnain Tayyab";
 let isStudent = true;
@@ -15,3 +13,4 @@ console.log(bigint);
 console.log(symbol);    
 console.log(undefinedValue);
 console.log(nullValue);
+console.log("Hello, World!");
