@@ -1,8 +1,8 @@
 const student = {
 
     name: "Husnain",
-    age: 22,
-    city: "Karachi",
+    age: 18,
+    city: "Lahore",
     country: "Pakistan",
     hobbies: ["Coding", "Gaming", "Traveling"],
     isStudent: true,
