@@ -1,3 +1,4 @@
+
 let age = 25;
 let Fullname = "Husnain Tayyab";
 let isStudent = true;
