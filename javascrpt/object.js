@@ -11,3 +11,5 @@ const student = {
     }
 };
 console.log(student.greet());
+console.log("Hobbies: " + student.hobbies.join(", "));
+console.log("Is student: " + student.isStudent);    
