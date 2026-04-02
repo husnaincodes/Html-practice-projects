@@ -1,5 +1,7 @@
 let a = 5;
 let b = 3;
+let message = "Operators in JavaScript";
+console.log(message);
 
 // Arithmetic Operators
 console.log("Addition:", a + b);        
