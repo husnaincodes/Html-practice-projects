@@ -17,3 +17,10 @@ let person = {
 for(let key in person){
     console.log(key + ": " + person[key]);
 }
+
+
+let sum = 0;
+for(let k=1; k<=10; k++){
+    sum += k;
+}
+console.log("Sum of numbers from 1 to 10: " + sum);
