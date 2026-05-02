@@ -1,0 +1,48 @@
+
+body{
+    background-color:#2f3640;
+    color:white;
+    font-family: Arial, sans-serif;
+}
+
+
+.navbar{
+    background:#1e272e;
+}
+
+
+.welcome-box{
+    background:#f1f2f6;
+    color:black;
+}
+
+
+.dashboard-card{
+    color:white;
+    border:none;
+}
+
+
+.form-box{
+    background:#3d3d3d;
+    padding:20px;
+    border-radius:8px;
+}
+
+
+.carousel img{
+    height:220px;
+    object-fit:cover;
+}
+
+.pagination .page-link{
+    background:#3d3d3d;
+    color:white;
+    border:none;
+}
+
+.pagination .page-item.active .page-link{
+    background:#1e272e;
+    color:white;
+    border:none;
+}
