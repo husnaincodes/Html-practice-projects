@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CV QR Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<style>
+  :root{
+    --paper: #FAF7F1;
+    --ink: #1C2430;
+    --teal: #2E6F63;
+    --teal-dark: #234F46;
+    --graphite: #62697A;
+    --rule: #E1D9C8;
+    --white: #FFFFFF;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    display:flex;
+    justify-content:center;
+    padding: 48px 20px;
+  }
+  .card{
+    width: 100%;
+    max-width: 460px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px 32px 30px;
+    position: relative;
+  }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 10px;
+  }
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.25;
+    margin: 0 0 10px;
+  }
+  p.lede{
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--graphite);
+    margin: 0 0 26px;
+  }
+  label{
+    display:block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  input[type="text"]{
+    width: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    padding: 11px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+  }
+  input[type="text"]:focus{
+    border-color: var(--teal);
+  }
+  button.generate{
+    margin-top: 14px;
+    width: 100%;
+    background: var(--ink);
+    color: var(--white);
+    border: none;
+    border-radius: 3px;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button.generate:hover{ background: var(--teal-dark); }
+  button.generate:focus-visible, input:focus-visible, button.download:focus-visible{
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  .error{
+    display:none;
+    font-size: 12px;
+    color: #A03B2E;
+    margin-top: 8px;
+  }
+
+  .scan-area{
+    display:none;
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px dashed var(--rule);
+    text-align:center;
+  }
+  .viewfinder{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .viewfinder canvas{ width: 190px; height: 190px; }
+  .bracket{
+    position:absolute;
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--teal);
+  }
+  .bracket.tl{ top:0; left:0; border-right:none; border-bottom:none; }
+  .bracket.tr{ top:0; right:0; border-left:none; border-bottom:none; }
+  .bracket.bl{ bottom:0; left:0; border-right:none; border-top:none; }
+  .bracket.br{ bottom:0; right:0; border-left:none; border-top:none; }
+
+  .scan-url{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--graphite);
+    word-break: break-all;
+    margin: 0 0 18px;
+    padding: 0 8px;
+  }
+  button.download{
+    background: var(--white);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button.download:hover{ background: var(--paper); }
+
+  .note{
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--graphite);
+  }
+  .note strong{ color: var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p class="eyebrow">Scan → Download</p>
+  <h1>CV QR Code</h1>
+  <p class="lede">Paste the link where your CV file lives online. The QR code always points to that link — so if you replace the file there later, every printed or saved copy of this code opens the newest version automatically.</p>
+
+  <label for="url">CV file link</label>
+  <input type="text" id="url" placeholder="https://yourname.vercel.app/cv.pdf" autocomplete="off">
+  <p class="error" id="error">Enter a link starting with http:// or https://</p>
+  <button class="generate" onclick="generateQR()">Generate QR code</button>
+
+  <div class="scan-area" id="scanArea">
+    <div class="viewfinder">
+      <span class="bracket tl"></span><span class="bracket tr"></span>
+      <span class="bracket bl"></span><span class="bracket br"></span>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+    <p class="scan-url" id="scanUrl"></p>
+    <button class="download" onclick="downloadQR()">Download PNG</button>
+  </div>
+
+  <div class="note">
+    <strong>Keeping it updated:</strong> host the PDF at a permanent path (e.g. a <code>cv.pdf</code> file in your portfolio's public folder) and only ever overwrite that same file when you revise your CV. Same link, same QR code, always current — no need to reprint or regenerate it.
+  </div>
+</div>
+
+<script>
+  let qr;
+  function generateQR(){
+    const input = document.getElementById('url');
+    const url = input.value.trim();
+    const errorEl = document.getElementById('error');
+    if(!/^https?:\/\/.+/i.test(url)){
+      errorEl.style.display = 'block';
+      return;
+    }
+    errorEl.style.display = 'none';
+
+    const canvas = document.getElementById('qrCanvas');
+    qr = new QRious({
+      element: canvas,
+      value: url,
+      size: 380,
+      background: '#FFFFFF',
+      foreground: '#1C2430',
+      level: 'H',
+      padding: 12
+    });
+
+    document.getElementById('scanUrl').textContent = url;
+    document.getElementById('scanArea').style.display = 'block';
+  }
+
+  function downloadQR(){
+    if(!qr) return;
+    const link = document.createElement('a');
+    link.download = 'cv-qr-code.png';
+    link.href = document.getElementById('qrCanvas').toDataURL('image/png');
+    link.click();
+  }
+
+  document.getElementById('url').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') generateQR();
+  });
+</script>
+
+</body>
+</html>
